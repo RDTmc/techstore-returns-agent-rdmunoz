@@ -6,3 +6,4 @@ data/chroma_db/
 data/techstore.db
 evidence/videos/*.mp4
 .streamlit/secrets.toml
+.zed/
