@@ -6,6 +6,7 @@ from agent.tools.consultar_pedido import consultar_pedido
 from agent.tools.validar_politica import validar_politica
 from agent.tools.calcular_reembolso import calcular_reembolso
 from agent.tools.generar_etiqueta import generar_etiqueta
+from agent.memory.long_term import guardar_decision, obtener_historial
 
 def test_consultar_pedido_existente():
     r = consultar_pedido.invoke({"pedido_id": "PED-001"})
@@ -37,3 +38,10 @@ def test_calcular_reembolso():
 def test_generar_etiqueta():
     r = generar_etiqueta.invoke({"pedido_id": "PED-001"})
     assert r["codigo"].startswith("RET-PED-001")
+
+
+def test_guardar_y_recuperar_historial():
+    guardar_decision("C-001", "PED-001", "aprobado", 45000, "test")
+    historial = obtener_historial("C-001", limite=1)
+    assert len(historial) == 1
+    assert historial[0]["decision"] == "aprobado"
