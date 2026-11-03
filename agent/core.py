@@ -4,6 +4,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate
 
+
 from config.settings import GOOGLE_API_KEY, LLM_MODEL
 from agent.tools.consultar_pedido import consultar_pedido
 from agent.tools.validar_politica import validar_politica
@@ -14,6 +15,7 @@ from agent.tools.notificar_cliente import notificar_cliente
 from agent.tools.buscar_casos import buscar_casos_similares
 from agent.planner import decidir_accion, construir_estado
 from agent.memory.long_term import guardar_decision
+
 
 TOOLS = [
     consultar_pedido, validar_politica, calcular_reembolso,

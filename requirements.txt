@@ -8,3 +8,5 @@ python-dotenv
 pandas
 pytest
 sentence-transformers
+reportlab>=4.0
+matplotlib>=3.8
