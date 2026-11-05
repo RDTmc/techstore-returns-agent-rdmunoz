@@ -1,0 +1,10 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.1, pytest-9.2.0, pluggy-1.7.0 -- C:\000 - aagente-tech-store\techstore-returns-agent-rdmunoz\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\000 - aagente-tech-store\techstore-returns-agent-rdmunoz
+plugins: anyio-4.15.1, langsmith-0.14.16
+collecting ... collected 1 item
+
+tests/test_tools.py::test_validar_politica_pedido_inexistente PASSED     [100%]
+
+============================== 1 passed in 2.58s ==============================

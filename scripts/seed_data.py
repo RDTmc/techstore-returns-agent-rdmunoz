@@ -54,4 +54,4 @@ pd.read_csv(DATA_DIR / "clientes.csv").to_sql(
 conn.commit()
 conn.close()
 
-print(f"✅ SQLite listo en {DB_PATH}")
+print(f"[OK] SQLite listo en {DB_PATH}")

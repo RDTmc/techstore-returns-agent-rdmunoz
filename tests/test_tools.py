@@ -45,3 +45,9 @@ def test_guardar_y_recuperar_historial():
     historial = obtener_historial("C-001", limite=1)
     assert len(historial) == 1
     assert historial[0]["decision"] == "aprobado"
+
+
+def test_validar_politica_pedido_inexistente():
+    r = validar_politica.invoke({"pedido_id": "PED-999", "motivo": "cualquier motivo"})
+    assert r["elegible"] is False
+    assert "no encontrado" in r["razon"].lower()
